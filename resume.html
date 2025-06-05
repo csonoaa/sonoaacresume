@@ -221,6 +221,78 @@
             font-weight: 500;
         }
 
+        /* Template Selector Styles */
+        .template-selector {
+            margin-bottom: 20px;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .template-option {
+            cursor: pointer;
+            text-align: center;
+            padding: 15px;
+            border: 2px solid hsl(var(--border-color));
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: hsl(var(--white));
+        }
+
+        .template-option:hover {
+            border-color: hsl(var(--primary-color));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px hsla(var(--shadow));
+        }
+
+        .template-option.active {
+            border-color: hsl(var(--primary-color));
+            background: hsl(var(--secondary-color));
+        }
+
+        .template-preview {
+            width: 100%;
+            height: 80px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .classic-preview {
+            background: linear-gradient(to bottom, #f8f9fa 0%, #f8f9fa 25%, #e9ecef 25%, #e9ecef 100%);
+        }
+
+        .modern-preview {
+            background: linear-gradient(135deg, #007bff 0%, #6c5ce7 100%);
+        }
+
+        .minimalist-preview {
+            background: linear-gradient(to bottom, #ffffff 0%, #ffffff 80%, #f1f3f4 80%, #f1f3f4 100%);
+            border: 1px solid #e0e0e0;
+        }
+
+        .two-column-preview {
+            background: linear-gradient(to right, #343a40 0%, #343a40 35%, #ffffff 35%, #ffffff 100%);
+        }
+
+        .executive-preview {
+            background: linear-gradient(to bottom, #8b4513 0%, #8b4513 25%, #f5f5dc 25%, #f5f5dc 100%);
+        }
+
+        .creative-preview {
+            background: linear-gradient(45deg, #dc3545 0%, #dc3545 50%, #ffffff 50%, #ffffff 100%);
+        }
+
+        .template-option span {
+            font-size: 14px;
+            font-weight: 600;
+            color: hsl(var(--text-dark));
+        }
+
         /* Resume Preview Styles */
         .resume-preview {
             background: hsl(var(--white));
@@ -231,6 +303,177 @@
             line-height: 1.5;
             color: hsl(var(--text-dark));
             min-height: 800px;
+            transition: all 0.3s ease;
+        }
+
+        /* Template-specific styles */
+        .resume-preview.classic {
+            font-family: 'Times New Roman', serif;
+            background: #ffffff;
+        }
+
+        .resume-preview.modern {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .resume-preview.modern .resume-header {
+            background: linear-gradient(135deg, #007bff, #6c5ce7);
+            color: white;
+            margin: -40px -40px 30px -40px;
+            padding: 30px 40px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .resume-preview.modern .resume-name {
+            color: white;
+        }
+
+        .resume-preview.modern .resume-contact {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .resume-preview.modern .resume-section-title {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .resume-preview.minimalist {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 300;
+            padding: 60px;
+            background: #ffffff;
+            border: none;
+            box-shadow: none;
+        }
+
+        .resume-preview.minimalist .resume-header {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 40px;
+        }
+
+        .resume-preview.minimalist .resume-name {
+            font-weight: 200;
+            font-size: 2.8rem;
+            letter-spacing: -1px;
+        }
+
+        .resume-preview.minimalist .resume-section-title {
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #333;
+            text-transform: none;
+            letter-spacing: 0;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .resume-preview.two-column {
+            font-family: 'Arial', sans-serif;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 0;
+            padding: 0;
+            background: #ffffff;
+        }
+
+        .resume-preview.two-column .resume-sidebar {
+            background: #343a40;
+            color: #ffffff;
+            padding: 40px 30px;
+            min-height: 800px;
+        }
+
+        .resume-preview.two-column .resume-main {
+            padding: 40px;
+        }
+
+        .resume-preview.two-column .resume-header {
+            grid-column: 1 / -1;
+            background: #343a40;
+            color: white;
+            margin: 0;
+            padding: 40px;
+            border-bottom: none;
+        }
+
+        .resume-preview.two-column .resume-name {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .resume-preview.two-column .resume-contact {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .resume-preview.executive {
+            font-family: 'Times New Roman', serif;
+            background: #fefefe;
+            border: 2px solid #8b4513;
+        }
+
+        .resume-preview.executive .resume-header {
+            background: #8b4513;
+            color: #f5f5dc;
+            margin: -40px -40px 30px -40px;
+            padding: 30px 40px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .resume-preview.executive .resume-name {
+            color: #f5f5dc;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .resume-preview.executive .resume-contact {
+            color: rgba(245, 245, 220, 0.9);
+        }
+
+        .resume-preview.executive .resume-section-title {
+            color: #8b4513;
+            border-bottom: 2px solid #8b4513;
+            font-size: 1.4rem;
+        }
+
+        .resume-preview.creative {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-preview.creative::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(45deg, #dc3545 0%, #dc3545 50%, transparent 50%);
+            z-index: 0;
+        }
+
+        .resume-preview.creative .resume-header {
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .resume-preview.creative .resume-name {
+            color: #dc3545;
+            font-weight: 900;
+            transform: skew(-5deg);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .resume-preview.creative .resume-section-title {
+            color: #dc3545;
+            border-bottom: 3px solid #dc3545;
+            transform: skew(-2deg);
+            font-weight: 700;
         }
 
         .resume-header {
@@ -395,6 +638,19 @@
                 grid-template-columns: 1fr;
             }
             
+            .template-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .template-option {
+                padding: 10px;
+            }
+            
+            .template-preview {
+                height: 60px;
+            }
+            
             .resume-contact {
                 flex-direction: column;
                 gap: 5px;
@@ -406,6 +662,19 @@
             
             .resume-name {
                 font-size: 1.8rem;
+            }
+            
+            .resume-preview.two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .resume-preview.two-column .resume-sidebar {
+                min-height: auto;
+                padding: 20px;
+            }
+            
+            .resume-preview.two-column .resume-main {
+                padding: 20px;
             }
         }
 
@@ -424,8 +693,25 @@
                 padding: 15px;
             }
             
+            .template-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            
+            .template-option {
+                padding: 8px;
+            }
+            
+            .template-preview {
+                height: 50px;
+            }
+            
             .resume-preview {
                 padding: 20px;
+            }
+            
+            .resume-preview.minimalist {
+                padding: 30px;
             }
         }
     </style>
@@ -490,6 +776,39 @@
                 </div>
                 <div id="education"></div>
                 
+                <!-- Template Selection -->
+                <div class="section-header">
+                    <h3>Template Style</h3>
+                </div>
+                <div class="template-selector">
+                    <div class="template-grid">
+                        <div class="template-option active" data-template="classic">
+                            <div class="template-preview classic-preview"></div>
+                            <span>Classic</span>
+                        </div>
+                        <div class="template-option" data-template="modern">
+                            <div class="template-preview modern-preview"></div>
+                            <span>Modern</span>
+                        </div>
+                        <div class="template-option" data-template="minimalist">
+                            <div class="template-preview minimalist-preview"></div>
+                            <span>Minimalist</span>
+                        </div>
+                        <div class="template-option" data-template="two-column">
+                            <div class="template-preview two-column-preview"></div>
+                            <span>Two Column</span>
+                        </div>
+                        <div class="template-option" data-template="executive">
+                            <div class="template-preview executive-preview"></div>
+                            <span>Executive</span>
+                        </div>
+                        <div class="template-option" data-template="creative">
+                            <div class="template-preview creative-preview"></div>
+                            <span>Creative</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Skills -->
                 <div class="section-header">
                     <h3>Skills</h3>
@@ -510,35 +829,75 @@
             <!-- Preview Section -->
             <div class="preview-section">
                 <h2>Live Preview</h2>
-                <div class="resume-preview" id="resumePreview">
-                    <div class="resume-header">
-                        <div class="resume-name" id="previewName">Your Name</div>
-                        <div class="resume-contact" id="previewContact">
-                            <span id="previewEmail"></span>
-                            <span id="previewPhone"></span>
-                            <span id="previewLocation"></span>
-                            <span id="previewWebsite"></span>
+                <div class="resume-preview classic" id="resumePreview">
+                    <!-- Standard Layout -->
+                    <div class="standard-layout" id="standardLayout">
+                        <div class="resume-header">
+                            <div class="resume-name" id="previewName">Your Name</div>
+                            <div class="resume-contact" id="previewContact">
+                                <span id="previewEmail"></span>
+                                <span id="previewPhone"></span>
+                                <span id="previewLocation"></span>
+                                <span id="previewWebsite"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-section" id="summarySection" style="display: none;">
+                            <div class="resume-section-title">Professional Summary</div>
+                            <div id="previewSummary"></div>
+                        </div>
+                        
+                        <div class="resume-section" id="experienceSection" style="display: none;">
+                            <div class="resume-section-title">Work Experience</div>
+                            <div id="previewExperience"></div>
+                        </div>
+                        
+                        <div class="resume-section" id="educationSection" style="display: none;">
+                            <div class="resume-section-title">Education</div>
+                            <div id="previewEducation"></div>
+                        </div>
+                        
+                        <div class="resume-section" id="skillsSection" style="display: none;">
+                            <div class="resume-section-title">Skills</div>
+                            <div class="resume-skills" id="previewSkills"></div>
                         </div>
                     </div>
-                    
-                    <div class="resume-section" id="summarySection" style="display: none;">
-                        <div class="resume-section-title">Professional Summary</div>
-                        <div id="previewSummary"></div>
-                    </div>
-                    
-                    <div class="resume-section" id="experienceSection" style="display: none;">
-                        <div class="resume-section-title">Work Experience</div>
-                        <div id="previewExperience"></div>
-                    </div>
-                    
-                    <div class="resume-section" id="educationSection" style="display: none;">
-                        <div class="resume-section-title">Education</div>
-                        <div id="previewEducation"></div>
-                    </div>
-                    
-                    <div class="resume-section" id="skillsSection" style="display: none;">
-                        <div class="resume-section-title">Skills</div>
-                        <div class="resume-skills" id="previewSkills"></div>
+
+                    <!-- Two-Column Layout -->
+                    <div class="two-column-layout" id="twoColumnLayout" style="display: none;">
+                        <div class="resume-header">
+                            <div class="resume-name" id="previewNameTwoCol">Your Name</div>
+                            <div class="resume-contact" id="previewContactTwoCol">
+                                <span id="previewEmailTwoCol"></span>
+                                <span id="previewPhoneTwoCol"></span>
+                                <span id="previewLocationTwoCol"></span>
+                                <span id="previewWebsiteTwoCol"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-sidebar">
+                            <div class="resume-section" id="skillsSectionTwoCol" style="display: none;">
+                                <div class="resume-section-title" style="color: white;">Skills</div>
+                                <div class="resume-skills" id="previewSkillsTwoCol"></div>
+                            </div>
+                            
+                            <div class="resume-section" id="educationSectionTwoCol" style="display: none;">
+                                <div class="resume-section-title" style="color: white;">Education</div>
+                                <div id="previewEducationTwoCol"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-main">
+                            <div class="resume-section" id="summarySectionTwoCol" style="display: none;">
+                                <div class="resume-section-title">Professional Summary</div>
+                                <div id="previewSummaryTwoCol"></div>
+                            </div>
+                            
+                            <div class="resume-section" id="experienceSectionTwoCol" style="display: none;">
+                                <div class="resume-section-title">Work Experience</div>
+                                <div id="previewExperienceTwoCol"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -556,14 +915,18 @@
             summary: '',
             workExperience: [],
             education: [],
-            skills: []
+            skills: [],
+            template: 'classic'
         };
+
+        let currentTemplate = 'classic';
 
         // Load saved data on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadSavedData();
             updatePreview();
             setupEventListeners();
+            setupTemplateSelector();
         });
 
         function setupEventListeners() {
@@ -650,6 +1013,221 @@
 
             resumeData.skills = skillsArray;
             saveData();
+        }
+
+        function setupTemplateSelector() {
+            const templateOptions = document.querySelectorAll('.template-option');
+            templateOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const template = this.dataset.template;
+                    changeTemplate(template);
+                });
+            });
+        }
+
+        function changeTemplate(template) {
+            currentTemplate = template;
+            resumeData.template = template;
+            
+            // Update active template option
+            document.querySelectorAll('.template-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`[data-template="${template}"]`).classList.add('active');
+            
+            // Update resume preview classes
+            const resumePreview = document.getElementById('resumePreview');
+            resumePreview.className = `resume-preview ${template}`;
+            
+            // Show/hide layouts based on template
+            const standardLayout = document.getElementById('standardLayout');
+            const twoColumnLayout = document.getElementById('twoColumnLayout');
+            
+            if (template === 'two-column') {
+                standardLayout.style.display = 'none';
+                twoColumnLayout.style.display = 'grid';
+                updateTwoColumnPreview();
+            } else {
+                standardLayout.style.display = 'block';
+                twoColumnLayout.style.display = 'none';
+                updateStandardPreview();
+            }
+            
+            saveData();
+        }
+
+        function updateStandardPreview() {
+            updatePreview();
+            updateExperiencePreview();
+            updateEducationPreview();
+            updateSkills();
+        }
+
+        function updateTwoColumnPreview() {
+            // Update personal information for two-column layout
+            const fullName = document.getElementById('fullName').value || 'Your Name';
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const website = document.getElementById('website').value;
+            const summary = document.getElementById('summary').value;
+
+            document.getElementById('previewNameTwoCol').textContent = fullName;
+            
+            // Update contact info for two-column
+            const contactInfo = [];
+            if (email) contactInfo.push(email);
+            if (phone) contactInfo.push(phone);
+            if (location) contactInfo.push(location);
+            if (website) contactInfo.push(website);
+            
+            const contactSpans = document.querySelectorAll('#previewContactTwoCol span');
+            contactSpans.forEach(span => span.textContent = '');
+            
+            contactInfo.forEach((info, index) => {
+                if (contactSpans[index]) {
+                    contactSpans[index].textContent = info;
+                }
+            });
+
+            // Update summary for two-column
+            const summarySectionTwoCol = document.getElementById('summarySectionTwoCol');
+            if (summary.trim()) {
+                document.getElementById('previewSummaryTwoCol').textContent = summary;
+                summarySectionTwoCol.style.display = 'block';
+            } else {
+                summarySectionTwoCol.style.display = 'none';
+            }
+
+            // Update skills for two-column
+            updateSkillsTwoColumn();
+            updateExperienceTwoColumn();
+            updateEducationTwoColumn();
+        }
+
+        function updateSkillsTwoColumn() {
+            const skillsInput = document.getElementById('skills').value;
+            const skillsArray = skillsInput.split(',').map(skill => skill.trim()).filter(skill => skill);
+            
+            const previewSkillsTwoCol = document.getElementById('previewSkillsTwoCol');
+            const skillsSectionTwoCol = document.getElementById('skillsSectionTwoCol');
+            
+            if (skillsArray.length > 0) {
+                previewSkillsTwoCol.innerHTML = '';
+                skillsArray.forEach(skill => {
+                    const skillElement = document.createElement('span');
+                    skillElement.className = 'resume-skill';
+                    skillElement.style.backgroundColor = 'rgba(255,255,255,0.2)';
+                    skillElement.style.color = 'white';
+                    skillElement.textContent = skill;
+                    previewSkillsTwoCol.appendChild(skillElement);
+                });
+                skillsSectionTwoCol.style.display = 'block';
+            } else {
+                skillsSectionTwoCol.style.display = 'none';
+            }
+        }
+
+        function updateExperienceTwoColumn() {
+            const experienceContainer = document.getElementById('workExperience');
+            const previewContainer = document.getElementById('previewExperienceTwoCol');
+            const experienceSection = document.getElementById('experienceSectionTwoCol');
+            
+            const experiences = [];
+            experienceContainer.querySelectorAll('.dynamic-section').forEach(section => {
+                const title = section.querySelector('.exp-title').value;
+                const company = section.querySelector('.exp-company').value;
+                const start = section.querySelector('.exp-start').value;
+                const end = section.querySelector('.exp-end').value;
+                const description = section.querySelector('.exp-description').value;
+                
+                if (title || company) {
+                    experiences.push({
+                        title: title,
+                        company: company,
+                        start: start,
+                        end: end,
+                        description: description
+                    });
+                }
+            });
+            
+            if (experiences.length > 0) {
+                previewContainer.innerHTML = '';
+                experiences.forEach(exp => {
+                    const expElement = document.createElement('div');
+                    expElement.className = 'resume-item';
+                    
+                    const dateRange = exp.start || exp.end ? 
+                        `${exp.start || ''} - ${exp.end || 'Present'}` : '';
+                    
+                    expElement.innerHTML = `
+                        <div class="resume-item-header">
+                            <div>
+                                <div class="resume-item-title">${exp.title || 'Job Title'}</div>
+                                <div class="resume-item-company">${exp.company || 'Company Name'}</div>
+                            </div>
+                            <div class="resume-item-date">${dateRange}</div>
+                        </div>
+                        ${exp.description ? `<div class="resume-item-description">${exp.description}</div>` : ''}
+                    `;
+                    
+                    previewContainer.appendChild(expElement);
+                });
+                experienceSection.style.display = 'block';
+            } else {
+                experienceSection.style.display = 'none';
+            }
+        }
+
+        function updateEducationTwoColumn() {
+            const educationContainer = document.getElementById('education');
+            const previewContainer = document.getElementById('previewEducationTwoCol');
+            const educationSection = document.getElementById('educationSectionTwoCol');
+            
+            const educationList = [];
+            educationContainer.querySelectorAll('.dynamic-section').forEach(section => {
+                const degree = section.querySelector('.edu-degree').value;
+                const school = section.querySelector('.edu-school').value;
+                const start = section.querySelector('.edu-start').value;
+                const end = section.querySelector('.edu-end').value;
+                const info = section.querySelector('.edu-info').value;
+                
+                if (degree || school) {
+                    educationList.push({
+                        degree: degree,
+                        school: school,
+                        start: start,
+                        end: end,
+                        info: info
+                    });
+                }
+            });
+            
+            if (educationList.length > 0) {
+                previewContainer.innerHTML = '';
+                educationList.forEach(edu => {
+                    const eduElement = document.createElement('div');
+                    eduElement.className = 'resume-item';
+                    
+                    const dateRange = edu.start || edu.end ? 
+                        `${edu.start || ''} - ${edu.end || ''}` : '';
+                    
+                    eduElement.innerHTML = `
+                        <div class="resume-item-header">
+                            <div>
+                                <div class="resume-item-title" style="color: white;">${edu.degree || 'Degree'}</div>
+                                <div class="resume-item-company" style="color: rgba(255,255,255,0.8);">${edu.school || 'School Name'}</div>
+                            </div>
+                            <div class="resume-item-date" style="color: rgba(255,255,255,0.7);">${dateRange}</div>
+                        </div>
+                        ${edu.info ? `<div class="resume-item-description" style="color: rgba(255,255,255,0.9);">${edu.info}</div>` : ''}
+                    `;
+                    
+                    previewContainer.appendChild(eduElement);
+                });
+                educationSection.style.display = 'block';
+            } else {
+                educationSection.style.display = 'none';
+            }
         }
 
         function addWorkExperience() {
@@ -799,6 +1377,11 @@
                 experienceSection.style.display = 'none';
             }
             
+            // Update two-column layout if active
+            if (currentTemplate === 'two-column') {
+                updateExperienceTwoColumn();
+            }
+            
             resumeData.workExperience = experiences;
             saveData();
         }
@@ -852,6 +1435,11 @@
                 educationSection.style.display = 'block';
             } else {
                 educationSection.style.display = 'none';
+            }
+            
+            // Update two-column layout if active
+            if (currentTemplate === 'two-column') {
+                updateEducationTwoColumn();
             }
             
             resumeData.education = educationList;
@@ -916,6 +1504,12 @@
                 
                 if (data.skills && data.skills.length > 0) {
                     document.getElementById('skills').value = data.skills.join(', ');
+                }
+                
+                // Load template preference
+                if (data.template) {
+                    currentTemplate = data.template;
+                    changeTemplate(currentTemplate);
                 }
                 
                 resumeData = data;
